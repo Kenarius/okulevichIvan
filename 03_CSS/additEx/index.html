@@ -12,38 +12,40 @@
 
         div.menu>div {
             width: 100px;
+            height: 20px;
             background-color: #d3d3d3;
             border: solid #777777 1px;
-            position: relative;
             cursor: pointer;
             float: left;
         }
 
         div.MenuLevel2 {
-            width: 100px;
-            display: none
+            opacity: 0;
+            visibility: hidden;
+            transition-property: opacity, visibility;
+            transition-duration: 2s;
+            transition-delay: 0.2s;
         }
 
         div.MenuLevel2>div {
             background-color: #d3d3d3;
             border: solid #777777 1px;
-            cursor: pointer;
             width: 100px;
+            display: inline-table;
         }
 
         div.menu>div:hover div.MenuLevel2 {
-            display: block;
-            position: absolute;
+            opacity: 1;
+            visibility: visible;
             z-index: 1
         }
 
         @media all and (max-width: 627px) {
             div.MenuLevel2 {
                 width: 350px;
-            }
-
-            div.MenuLevel2>div {
-                float: left;
+                margin-top: -18px;
+                margin-left: 100px;
+                display: table;
             }
 
             div.menu>div {
@@ -51,8 +53,7 @@
             }
 
             div.menu>div:hover div.MenuLevel2 {
-                left: 100%;
-                bottom: -1px;
+                bottom: 41px;
             }
         }
     </style>
