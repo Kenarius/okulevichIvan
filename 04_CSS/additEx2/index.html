@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        body{
+            counter-reset: heading 65;
+        }
         table {
             border: 8px solid black;
             border-collapse: collapse;
@@ -13,14 +16,22 @@
         td {
             height: 100px;
             width: 100px;
+            text-align: center;
+            font-size: 64px;
         }
 
         tr:nth-child(odd) td:nth-child(odd) {
             background-color: black;
+            color: white;
         }
 
         tr:nth-child(even) td:nth-child(even) {
             background-color: black;
+            color: white;
+        }
+        td::before{
+            counter-increment: heading -1;
+            content: counter(heading);
         }
     </style>
 </head>
