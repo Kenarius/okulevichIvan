@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Проверка пароля</h2>
+    <form action="">
+        <fieldset>
+            <input class="pass" type="text"> * Пароль
+            <br><br>
+            <input class="checkPass" type="text"> * Повторите пароль<br>
+            <br>
+            <input type="button" value="Отправить"> <br>
+        </fieldset>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function ($) {
+            $(".checkPass").on("keyup", function () {
+                var inputPass = $(".pass").val();
+                var inputCheckPass = $(".checkPass").val();
+                if (inputPass != inputCheckPass){
+                    $("input[type='text']").css("backgroundColor", "red")
+                }
+                else{
+                    $("input[type='text']").css("backgroundColor", "green")
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
